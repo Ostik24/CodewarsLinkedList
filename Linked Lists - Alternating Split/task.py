@@ -24,7 +24,6 @@ class Context(object):
         self.second = second
 
 def alternating_split(head):
-    print(head)
     probe = head
     if probe and probe.next:
         lst = []
