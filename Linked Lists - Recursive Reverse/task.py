@@ -18,26 +18,14 @@ class Node(object):
             stringa += " -> None"
         return stringa
 
-def sorted_insert(head, data):
+def reverse(head):
     probe = head
-    count = 0
     if probe:
-        if data < probe.data:
-            r = Node(data)
-            r.next = probe
-            return r
-        while probe and probe.data < data:
+        new = Node(probe.data)
+        while probe.next:
             probe = probe.next
-            count += 1
-        r = Node(data)
-        r.next = probe
-        count -= 1
-        prob = head
-        while count:
-            count -= 1
-            prob = prob.next
-        prob.next = r
-        return head
-    r = Node(data)
-    r.next = head
-    return r
+            r = Node(probe.data)
+            r.next = new
+            new = r
+        return new
+    return None
